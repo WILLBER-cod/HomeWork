@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class Signaling : MonoBehaviour
 {
+    [SerializeField] private float _increasingSpeed;
+    [SerializeField] private float _decayRate;
+
     private AudioSource _audio;
 
     private bool _exit = false;
@@ -19,10 +22,10 @@ public class Signaling : MonoBehaviour
     private void Update()
     {
         if (_exit == true && _audio.volume != 0)
-            _audio.volume -= 0.01f;
+            _audio.volume -= _decayRate;
 
         else if (_enter == true && _audio.volume != 1)
-            _audio.volume += 0.005f;
+            _audio.volume += _increasingSpeed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
