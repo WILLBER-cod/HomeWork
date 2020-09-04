@@ -9,8 +9,6 @@ public class SpawnPoint : MonoBehaviour
 
     private Transform[] _points;
 
-    private float _time;
-
     private int _index;
 
     private void Start()
@@ -25,21 +23,16 @@ public class SpawnPoint : MonoBehaviour
 
     private void Update()
     {
-        _time += Time.deltaTime;
-        if(_time >= 2 && _index != _path.childCount)
-        {
+        if( _index != _path.childCount)
             Spawn();
-
-            _time = 0;
-
-            _index++;
-        }
     }
 
     void Spawn()
     {
         Transform Target = _points[_index];
-        Instantiate(_target, transform.position = Target.position, Quaternion.identity);
+        Instantiate(_target, Target.position, Quaternion.identity);
+
+        _index++;
     }
 
 }
