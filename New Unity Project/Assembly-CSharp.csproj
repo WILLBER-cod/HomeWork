@@ -66,6 +66,7 @@
     <Compile Include="Assets\Script\DestroyGem.cs" />
     <Compile Include="Assets\Script\EnemyMovement.cs" />
     <Compile Include="Assets\Script\Movement.cs" />
+    <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\SpawnPoint.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.8f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

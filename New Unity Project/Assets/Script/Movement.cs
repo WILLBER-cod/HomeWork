@@ -24,20 +24,27 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector2.right * _speed * Time.deltaTime);
-
-            _anim.SetBool("Run", true);
+            IsRun(true);
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector2.left * _speed * Time.deltaTime);
-
-            _anim.SetBool("Run", true);
+            IsRun(false);
         }
         else
             _anim.SetBool("Run", false);
 
         if (Input.GetKeyDown(KeyCode.Space))
             _body.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+    }
+
+    private void IsRun(bool IsRight = false)
+    {
+        _anim.SetBool("Run", true);
+
+        if( IsRight == true)
+            transform.Translate(Vector2.right * _speed * Time.deltaTime);
+        else
+            transform.Translate(Vector2.left * _speed * Time.deltaTime);
+
     }
 }

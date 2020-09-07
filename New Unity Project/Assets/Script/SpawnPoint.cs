@@ -27,7 +27,7 @@ public class SpawnPoint : MonoBehaviour
             Spawn();
     }
 
-    void Spawn()
+    private void Spawn()
     {
         Transform Target = _points[_index];
         Instantiate(_target, Target.position, Quaternion.identity);
